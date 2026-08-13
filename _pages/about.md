@@ -31,4 +31,4 @@ I am a population health scientist studying how the places people live shape the
 
 Exposure measurement is the bottleneck in environmental health: the environments people actually experience are rarely the ones our data describe. Questionnaires and fixed monitoring stations record coarse averages, not the greenery people see, the food outlets they pass, or the air they breathe as they move through a city. I build that measurement layer from social media, street view and geo-tagged imagery, remote sensing, and large-scale geospatial data, then apply it across three domains of population health: mental health and suicide, where social and digital environments matter alongside physical ones; mortality, where air pollution and urban form shape population risk; and cognitive health, where long-term environmental exposures are associated with cognitive decline and dementia in older adults.
 
-**Research areas:** Sensing Place · Place & Mental Health · Place & Mortality · Place & Cognitive Health
+**Research areas:** Sensing Place · Place & Mental Health · Place & COVID-19 Mortality · Place & Cognitive Health
