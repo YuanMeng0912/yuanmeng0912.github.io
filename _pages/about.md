@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>Postdoctoral Associate.</a> Department of Population Health Sciences, Weill Cornell Medicine
+subtitle: Postdoctoral Associate, Department of Population Health Sciences, Weill Cornell Medicine
 
 
 profile:
@@ -25,8 +25,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Postdoctoral Associate at Weill Cornell Medicine. 
+*Mapping the place-based exposome*
 
-My research focuses on spatiotemporal modeling of environmental metrics, including air pollution, green space, land use, urban functions, and urban landscapes, to assess their impacts on public and mental health. I integrate spatial statistics, social media data, remote sensing, and machine learning to identify environmental risk and protective factors, with a focus on vulnerable populations, including children and older adults. 
+I am a population health scientist studying how the places people live shape their health. My research develops artificial intelligence and geospatial methods to measure environmental and social exposures, including air pollution, built and food environments, green space, and neighborhood conditions, and applies them to population health outcomes from adolescence through older age.
 
-My work bridges environmental epidemiology, urban planning, and health equity, enhancing the understanding of the interactions between environment and health outcomes.
+Exposure measurement is the bottleneck in environmental health: the environments people actually experience are rarely the ones our data describe. Questionnaires and fixed monitoring stations record coarse averages, not the greenery people see, the food outlets they pass, or the air they breathe as they move through a city. I build that measurement layer from social media, street view and geo-tagged imagery, remote sensing, and large-scale geospatial data ([Sensing Place](#)), then apply it across three domains of population health: mental health and suicide, where social and digital environments matter alongside physical ones ([Place & Mental Health](#)); mortality, where air pollution and urban form shape population risk ([Place & Mortality](#)); and cognitive health, where long-term environmental exposures are associated with cognitive decline and dementia in older adults ([Place & Cognitive Health](#)).
+
+My current work extends this program toward AI methods for population health, including joint and cumulative exposures, large language models for extracting social determinants from unstructured text, and Bayesian spatiotemporal models that estimate environmental effects where individual-level exposure data do not exist. I am building this toward an independent research program on environmental and social determinants of cognitive health in aging populations.
