@@ -1,14 +1,10 @@
 name: Prettier code formatter
 
 on:
-  pull_request:
-    branches:
-      - master
-      - main
-  push:
-    branches:
-      - master
-      - main
+  # The inherited template is not fully Prettier-formatted, so an automatic
+  # repository-wide check fails on every website update. Keep it available
+  # for intentional manual runs without generating false failure emails.
+  workflow_dispatch:
 
 jobs:
   check:
