@@ -30,12 +30,15 @@ module Jekyll
       article_id = context[@article_id.strip]
       scholar_id = context[@scholar_id.strip]
       cache_key = "#{scholar_id}:#{article_id}"
+      fallback_count = context.registers[:site].data.dig("scholar_citations", "citations", article_id)
 
       begin
         fetch_profile(scholar_id) unless GoogleScholarCitationsTag::LoadedProfiles[scholar_id]
-        citation_count = GoogleScholarCitationsTag::Citations.fetch(cache_key, "N/A")
+        citation_count = GoogleScholarCitationsTag::Citations.fetch(cache_key) do
+          fallback_count.nil? ? "N/A" : format_count(fallback_count)
+        end
       rescue StandardError => e
-        citation_count = "N/A"
+        citation_count = fallback_count.nil? ? "N/A" : format_count(fallback_count)
         GoogleScholarCitationsTag::LoadedProfiles[scholar_id] = true
         puts "Error fetching Google Scholar profile #{scholar_id}: #{e.class} - #{e.message}"
       end
@@ -46,7 +49,10 @@ module Jekyll
     private
 
     def fetch_profile(scholar_id)
-      profile_url = "https://scholar.google.com/citations?hl=en&user=#{scholar_id}&pagesize=100&sortby=pubdate"
+      profile_url = ENV.fetch(
+        "SCHOLAR_PROFILE_URL",
+        "https://scholar.google.com/citations?hl=en&user=#{scholar_id}&pagesize=100&sortby=pubdate",
+      )
       doc = Nokogiri::HTML(
         URI.open(
           profile_url,
@@ -67,16 +73,20 @@ module Jekyll
 
         citation_text = row.at_css(".gsc_a_ac")&.text.to_s.delete(",").strip
         citation_count = citation_text.empty? ? 0 : citation_text.to_i
-        GoogleScholarCitationsTag::Citations["#{scholar_id}:#{article_id}"] = Helpers.number_to_human(
-          citation_count,
-          format: "%n%u",
-          precision: 2,
-          units: { thousand: "K", million: "M", billion: "B" },
-        )
+        GoogleScholarCitationsTag::Citations["#{scholar_id}:#{article_id}"] = format_count(citation_count)
       end
 
       GoogleScholarCitationsTag::LoadedProfiles[scholar_id] = true
       puts "Loaded #{rows.length} publications from Google Scholar profile #{scholar_id}"
+    end
+
+    def format_count(citation_count)
+      Helpers.number_to_human(
+        citation_count,
+        format: "%n%u",
+        precision: 2,
+        units: { thousand: "K", million: "M", billion: "B" },
+      )
     end
   end
 end
