@@ -272,8 +272,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Meng]
+  first_name: [Yuan, Y.]
 
   style: apa
   locale: en
@@ -293,6 +293,8 @@ scholar:
   details_link: Details
 
   query: "@*"
+  sort_by: year, priority, month
+  order: descending
   group_by: year
   group_order: descending
 
@@ -324,6 +326,7 @@ filtered_bibtex_keywords:
     pdf,
     poster,
     preview,
+    priority,
     selected,
     slides,
     supp,

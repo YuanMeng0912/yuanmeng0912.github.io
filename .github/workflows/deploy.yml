@@ -1,6 +1,9 @@
 name: Deploy site
 
 on:
+  # Refresh Google Scholar citation counts automatically every Monday.
+  schedule:
+    - cron: "17 8 * * 1"
   push:
     branches:
       - master
