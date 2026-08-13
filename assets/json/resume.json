@@ -53,6 +53,52 @@
       ]
     }
   ],
+  "projects": [
+    {
+      "name": "Place & Cognitive Health",
+      "startDate": "2024",
+      "endDate": "Present",
+      "summary": "Environmental exposures accumulate over decades, making older adults a critical and understudied population. This project estimates long-term associations between air pollution, food environments, and dementia-related mortality using Bayesian spatiotemporal models where individual-level exposure data are unavailable. This is the line I am building toward an independent research program.",
+      "highlights": [
+        "Long-Term Air Pollution and Dementia",
+        "Food Environments and Cognitive Health",
+        "Joint and Cumulative Exposures"
+      ]
+    },
+    {
+      "name": "Place & Mental Health",
+      "startDate": "2023",
+      "endDate": "Present",
+      "summary": "Social and digital environments shape mental health alongside physical ones. Using national cohort and county-level data, this project applies machine learning and large language models to identify which social determinants and digital exposures predict suicide risk and mental health outcomes. Findings on adolescent screen use were published in <em>JAMA</em> and covered by The New York Times, CNN, and The Washington Post.",
+      "highlights": [
+        "Social Determinants of Health and Suicide",
+        "Digital and Screen Environments",
+        "Large Language Models for Unstructured Health Data"
+      ]
+    },
+    {
+      "name": "Place & Mortality",
+      "startDate": "2021",
+      "endDate": "2024",
+      "summary": "Air pollution and urban morphology shape population mortality risk, but how much depends on how cities are built and used. This project links satellite-derived pollution, urban form, and human mobility to mortality across cities and countries, including during the COVID-19 pandemic. It formed the core of my doctoral research.",
+      "highlights": [
+        "Air Pollution and Mortality",
+        "Urban Morphology and Air Quality",
+        "Built Environment and Urban Space Use"
+      ]
+    },
+    {
+      "name": "Sensing Place",
+      "startDate": "2017",
+      "endDate": "Present",
+      "summary": "Conventional exposure data describe administrative units, not the environments people move through. This project develops AI and geospatial methods to measure urban form, land use, greenery, and human activity from remote sensing, street view and geo-tagged imagery, social media, and crowdsourced map data. The resulting exposure layers feed every other project on this site.",
+      "highlights": [
+        "Land Cover and Land Use Mapping",
+        "Urban Function and Landscape Characterization",
+        "Human Activity and Perception Sensing"
+      ]
+    }
+  ],
   "education": [
     {
       "institution": "Department of Land Surveying and Geo-Informatics, The Hong Kong Polytechnic University",
