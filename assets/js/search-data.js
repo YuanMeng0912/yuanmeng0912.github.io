@@ -23,7 +23,35 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "post-a-post-with-plotly-js",
+        },{id: "dropdown-sensing-place",
+              title: "Sensing Place",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/projects/sensing-place/";
+              },
+            },{id: "dropdown-place-amp-covid-19-mortality",
+              title: "Place &amp; COVID-19 Mortality",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/projects/place-covid-19-mortality/";
+              },
+            },{id: "dropdown-place-amp-mental-health",
+              title: "Place &amp; Mental Health",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/projects/place-mental-health/";
+              },
+            },{id: "dropdown-place-amp-cognitive-health",
+              title: "Place &amp; Cognitive Health",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/projects/place-cognitive-health/";
+              },
+            },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
@@ -391,6 +419,26 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "projects-place-amp-cognitive-health",
+          title: 'Place &amp;amp; Cognitive Health',
+          description: "Long-term air pollution, food environments, and dementia mortality; ongoing work.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/place-cognitive-health/";
+            },},{id: "projects-place-amp-covid-19-mortality",
+          title: 'Place &amp;amp; COVID-19 Mortality',
+          description: "How air pollution, urban morphology, and human mobility shaped mortality across cities and countries during the COVID-19 pandemic. The core of my doctoral research.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/place-covid-19-mortality/";
+            },},{id: "projects-place-amp-mental-health",
+          title: 'Place &amp;amp; Mental Health',
+          description: "Machine learning applied to social and digital environments to identify what predicts suicide risk and mental health outcomes. Published in JAMA and Nature Mental Health.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/place-mental-health/";
+            },},{id: "projects-sensing-place",
+          title: 'Sensing Place',
+          description: "AI and geospatial methods that measure urban form, greenery, and human activity from satellite, street view, and social media data. The exposure layer that every other project depends on.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sensing-place/";
             },},{
         id: 'social-email',
         title: 'email',
