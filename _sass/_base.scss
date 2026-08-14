@@ -299,6 +299,13 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+@media (min-width: 576px) {
+  .navbar .nav-item.dropdown:hover > .dropdown-menu,
+  .navbar .nav-item.dropdown:focus-within > .dropdown-menu {
+    display: block;
+  }
+}
+
 .dropdown-item {
   color: var(--global-text-color);
 
@@ -705,6 +712,11 @@ footer.sticky-bottom {
   }
 
   .card {
+    .card-title {
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
     img {
       width: 100%;
     }

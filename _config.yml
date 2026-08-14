@@ -4,9 +4,9 @@
 
 title: Yuan Meng # the website title (if blank, full name will be used instead)
 first_name: Yuan
-middle_name: 
+middle_name:
 last_name: Meng
-contact_note: 
+contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -14,7 +14,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon-y.svg # the favicon image in /assets/img/
 
 url: "https://yuanmeng0912.github.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -46,6 +46,7 @@ repo_trophies:
 
 navbar_fixed: true
 footer_fixed: true
+footer_enabled: false
 search_enabled: false
 socials_in_search: true
 posts_in_search: true
@@ -176,8 +177,6 @@ exclude:
   - _pages/dropdown.md
   - _news/announcement_*.md
   - _projects/?_project.md
-  - _projects
-  - _pages/projects.md
   - _pages/teaching.md
   - _pages/profiles.md
   - assets/jupyter/blog.ipynb
@@ -335,7 +334,7 @@ filtered_bibtex_keywords:
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
-max_author_limit:  # leave blank to always show all authors
+max_author_limit: # leave blank to always show all authors
 more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.

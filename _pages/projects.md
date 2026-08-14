@@ -1,11 +1,21 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Research on place, environment, and population health.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+dropdown: true
+children:
+  - title: Sensing Place
+    permalink: /projects/sensing-place/
+  - title: Place & COVID-19 Mortality
+    permalink: /projects/place-covid-19-mortality/
+  - title: Place & Mental Health
+    permalink: /projects/place-mental-health/
+  - title: Place & Cognitive Health
+    permalink: /projects/place-cognitive-health/
+display_categories: [research]
 horizontal: false
 ---
 

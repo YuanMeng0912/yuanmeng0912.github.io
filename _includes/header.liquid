@@ -70,10 +70,9 @@
                 <li class="nav-item dropdown {% if page.title == p.title or has_active_child %}active{% endif %}">
                   <a
                     class="nav-link dropdown-toggle"
-                    href="#"
+                    href="{{ p.permalink | relative_url }}"
                     id="navbarDropdown"
                     role="button"
-                    data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
