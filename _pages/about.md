@@ -13,6 +13,10 @@ profile:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
+contact:
+  primary_email: yum4006@cornell.edu
+  secondary_email: mengyuan0912@gmail.com
+  note: I welcome opportunities for research collaboration and interdisciplinary work.
 
 announcements:
   enabled: false # includes a list of news items
@@ -29,6 +33,6 @@ latest_posts:
 
 I am a population health scientist studying how the places people live shape their health. My research develops artificial intelligence and geospatial methods to measure environmental and social exposures, including air pollution, built and food environments, green space, and neighborhood conditions, and applies them to population health outcomes from adolescence through older age.
 
-Exposure measurement is a major challenge in environmental health because the environments people actually experience are rarely the ones our data describe. Questionnaires and fixed monitoring stations record coarse averages, not the greenery people see, the food outlets they pass, or the air they breathe as they move through a city. Through [Sensing Place](/projects/sensing-place/), I build more detailed exposure measures using social media, street view and geo-tagged imagery, and large-scale geospatial data.
+Exposure measurement is a major challenge in environmental health because the environments people actually experience are rarely the ones our data describe. Questionnaires and fixed monitoring stations record coarse averages, not the greenery people see, the food outlets they pass, or the air they breathe as they move through a city. Through **[Sensing Place](/projects/sensing-place/)**, I build more detailed exposure measures using social media, street view and geo-tagged imagery, and large-scale geospatial data.
 
-I apply these methods across three areas of population health. [Place & Mental Health](/projects/place-mental-health/) examines how social and digital environments shape mental health and suicide risk. [Place & COVID-19 Mortality](/projects/place-covid-19-mortality/) studies how air pollution, urban form, and human mobility influenced mortality during the pandemic. [Place & Cognitive Health](/projects/place-cognitive-health/) investigates how long-term environmental exposures relate to cognitive decline and dementia in older adults.
+I apply these methods across three areas of population health. **[Place & Mental Health](/projects/place-mental-health/)** examines how social and digital environments shape mental health and suicide risk. **[Place & COVID-19 Mortality](/projects/place-covid-19-mortality/)** studies how air pollution, urban form, and human mobility influenced mortality during the pandemic. **[Place & Cognitive Health](/projects/place-cognitive-health/)** investigates how long-term environmental exposures relate to cognitive decline and dementia in older adults.

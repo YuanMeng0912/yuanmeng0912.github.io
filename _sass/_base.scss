@@ -238,6 +238,10 @@ ul.task-list input[type="checkbox"] {
 
   .about-copy {
     min-width: 0;
+
+    strong a {
+      font-weight: 700;
+    }
   }
 
   .profile {
@@ -382,6 +386,28 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+.navbar.navbar-light .navbar-nav .nav-item .nav-link.contact-nav-link {
+  color: #ffffff;
+  background-color: #237c7e;
+  border-radius: 999px;
+  margin-left: 0.45rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: #195f61;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link.contact-nav-link {
+    display: inline-block;
+    margin-top: 0.4rem;
+  }
+}
+
 .navbar-toggler {
   .icon-bar {
     display: block;
@@ -435,6 +461,129 @@ ul.task-list input[type="checkbox"] {
 }
 
 // Social (bottom)
+
+.contact-section {
+  scroll-margin-top: 76px;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-top: 4rem;
+  margin-left: -50vw;
+  color: #343149;
+  background-color: #e7e8f0;
+}
+
+.contact-section-inner {
+  display: grid;
+  grid-template-columns: 1.25fr 1.1fr 0.8fr;
+  gap: 3.5rem;
+  max-width: $max-content-width;
+  margin: 0 auto;
+  padding: 4.5rem 15px 5rem;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    color: #343149;
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height: 1.08;
+  }
+
+  h3 {
+    margin: 0 0 1.25rem;
+    color: #343149;
+    font-size: 1.45rem;
+    font-weight: 800;
+  }
+
+  p {
+    max-width: 26rem;
+    margin: 0;
+    font-size: 1.18rem;
+    font-weight: 600;
+    line-height: 1.55;
+  }
+}
+
+.contact-emails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+
+  a {
+    color: #343149;
+    font-size: 1.18rem;
+    font-weight: 800;
+    line-height: 1.35;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.2em;
+
+    &:hover,
+    &:focus {
+      color: #237c7e;
+    }
+  }
+}
+
+.contact-profile-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-height: 32px;
+    color: #343149;
+    font-size: 1.12rem;
+    font-weight: 800;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    i {
+      width: 1.4rem;
+      color: #237c7e;
+      font-size: 1.45rem;
+      text-align: center;
+    }
+
+    &:hover,
+    &:focus {
+      color: #237c7e;
+      text-decoration: none;
+      transform: translateX(3px);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-section {
+    margin-top: 3rem;
+  }
+
+  .contact-section-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3.25rem 1.5rem 3.75rem;
+
+    h2 {
+      font-size: 2.35rem;
+    }
+
+    p {
+      font-size: 1.08rem;
+    }
+  }
+
+  .contact-emails a,
+  .contact-profile-links a {
+    font-size: 1.08rem;
+  }
+}
 
 .social {
   text-align: center;
