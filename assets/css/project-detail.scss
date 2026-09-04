@@ -151,3 +151,9 @@ html[data-theme="dark"] .physical-project {--muted:#9c9c9c;--tint:rgba(38,152,18
   &.original-size img {max-width:none;max-height:none;margin:0;}
   @media(max-width:600px) {.figure-viewer-label {width:100%;}.figure-viewer-toolbar {gap:8px;}}
 }
+
+.function-project {
+  .authornote {font-family:"Roboto Mono",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:12px 0 0;}
+  .figrow figure {min-width:0;}
+  @media(max-width:760px) {.figrow {grid-template-columns:1fr!important;}}
+}
