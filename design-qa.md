@@ -82,3 +82,14 @@ Content concern left unchanged for the user: Ecological Indicators describes six
 
 final result: blocked
 Blocker: full source-versus-implementation screenshot comparison unavailable. Implementation and functional verification completed, but exact visual fidelity is not claimed.
+
+## Project 3 — 2026-09-04
+
+Source: Website design/03_covid-mortality/Mockup.html. Implementation: http://localhost:8080/projects/place-covid-19-mortality/.
+
+Implemented five studies and the new five-entry Selected Papers section. Desktop and 390 × 844 mobile screenshots inspected; mobile cards stack and no horizontal overflow occurs. All in-page targets resolve. All 13 unique JPEGs are byte-identical to the supplied originals and their generated-site copies. PDF and BibTeX assets exist for all five studies; DOI values match bibliography metadata. Selected-paper figure opens the full-resolution dialog, and Original size toggles to Fit to window with the original 1903 × 1066 image loaded. No browser console errors observed. Existing navigation retained and mockup-only chrome/notes omitted. Author names are bold; these five studies identify Meng as first author. Prose retained.
+
+Numerical spot checks match paper abstracts: AAG relative-risk ranges; Cities sample sizes and usage decline; IJERPH percentage values. Content concern left unchanged: −26.52% to 373.60% describes the percentage difference between excess all-cause mortality and recorded COVID-19 mortality, rather than the excess-mortality rate itself.
+
+final result: blocked
+Blocker: paired source screenshot comparison remains unavailable following the earlier browser policy rejection of local reference navigation. Implementation visual and functional checks passed; exact visual fidelity is not claimed.
