@@ -41,3 +41,32 @@ A separate focused crop was not needed because all four linked project names and
 - No actionable P0, P1, or P2 differences remain.
 
 final result: passed
+
+
+## Project 1 implementation verification — 2026-09-03
+
+Source: `/Users/yuanmeng/Library/CloudStorage/Dropbox/Academic_improvement/Application_Position/Application_universities/Website design/01_sensing-place-physical/Mockup.html`.
+Implementation: `http://localhost:8080/projects/sensing-place-physical/`.
+
+Evidence: `/tmp/project1-desktop.png`, `/tmp/project1-mobile.png`, `/tmp/project1-dark.png`.
+Viewports: desktop 1440 × 1000; mobile 390 × 844 CSS pixels. Captures use corresponding viewport pixel dimensions. Light and dark themes inspected.
+
+Verification completed:
+- All 13 supplied figures render; original images can be opened at full resolution.
+- Sidebar anchors and current-section highlighting work; target headings clear the fixed site navigation.
+- Five DOI links match local paper metadata; all five PDF and five BibTeX files exist in the built output. External DOI resolution not tested.
+- Desktop and mobile have no horizontal overflow. Figure pairs stack on mobile.
+- Typography uses Roboto and Roboto Slab with the reference sizes. Scoped overrides prevent Bootstrap’s `.lead` class from enlarging study text. Monospaced labels use the available monospace fallback when Roboto Mono is absent.
+- Layout uses the supplied 198 px sidebar, 44 px gap, figure plates, teal accents, and featured-study styling. Existing site navigation is retained as requested.
+- Dark theme retains white scientific figure plates and uses readable foreground colors.
+- Text comparison confirms original prose, titles, captions, and labels remain unchanged except 32,367 → 22,022 in the hero caption. Citation controls are labeled Cite (BibTeX).
+- No browser console errors observed. Jekyll builds successfully; git diff whitespace check passes.
+
+Iteration history:
+1. Fixed malformed figure link Liquid markup after empty figures appeared; subsequent browser check found all 13 figures loaded.
+2. Fixed inherited Bootstrap lead text sizing; subsequent desktop screenshot confirmed 16 px study prose and mobile screenshot confirmed readable wrapping.
+
+Reference-comparison limitation: browser security policy rejected opening the local `file://` mockup. No alternate browser or workaround was attempted. Full-view and focused source-versus-implementation screenshot comparisons could not be completed; source pixel dimensions are unavailable. Implementation screenshots were inspected against the supplied HTML structure and CSS, but this does not satisfy the Image-to-Code skill’s paired visual-comparison gate.
+
+final result: blocked
+Blocker: reference screenshot comparison unavailable. Local implementation and interaction checks are complete; no claim of fully verified visual fidelity.

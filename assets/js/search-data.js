@@ -23,12 +23,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "dropdown-sensing-place",
-              title: "Sensing Place",
+        },{id: "dropdown-sensing-place-mapping-the-physical-environment",
+              title: "Sensing Place — Mapping the Physical Environment",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "/projects/sensing-place/";
+                window.location.href = "/projects/sensing-place-physical/";
+              },
+            },{id: "dropdown-sensing-place-measuring-urban-function-amp-deprivation",
+              title: "Sensing Place — Measuring Urban Function &amp; Deprivation",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/projects/sensing-place-function/";
               },
             },{id: "dropdown-place-amp-covid-19-mortality",
               title: "Place &amp; COVID-19 Mortality",
@@ -434,11 +441,16 @@ ninja.data = [{
           description: "Machine learning applied to social and digital environments to identify what predicts suicide risk and mental health outcomes. Published in JAMA and Nature Mental Health.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/place-mental-health/";
-            },},{id: "projects-sensing-place",
-          title: 'Sensing Place',
-          description: "AI and geospatial methods that measure urban form, greenery, and human activity from satellite, street view, and social media data. The exposure layer that every other project depends on.",
+            },},{id: "projects-sensing-place-measuring-urban-function-amp-deprivation",
+          title: 'Sensing Place — Measuring Urban Function &amp;amp; Deprivation',
+          description: "How places are used and where disadvantage is concentrated, inferred from landscape form and human activity.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/sensing-place/";
+              window.location.href = "/projects/sensing-place-function/";
+            },},{id: "projects-sensing-place-mapping-the-physical-environment",
+          title: 'Sensing Place — Mapping the Physical Environment',
+          description: "Land cover and land-use change measured from crowdsourced geographic data and geo-tagged imagery.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sensing-place-physical/";
             },},{
         id: 'social-email',
         title: 'email',
