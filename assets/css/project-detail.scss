@@ -187,3 +187,12 @@ html[data-theme="dark"] .physical-project {--muted:#9c9c9c;--tint:rgba(38,152,18
 .mental-project {
   .fig-hug .plate img {width:auto;height:auto;max-width:100%;}
 }
+
+.cognitive-project {
+  .simple {max-width:930px;margin:0 auto;padding-bottom:20px;}
+  .simple header.page {padding:64px 0 30px;}
+  .lede {margin:26px 0 34px;max-width:66ch;}
+  .lede p {font-size:16.5px;line-height:1.72;}
+  .ongoingtag {font-family:"Roboto Mono",monospace;font-size:13px;letter-spacing:.03em;color:var(--theme);white-space:nowrap;}
+  .fig-hug .plate img {width:auto;height:auto;max-width:100%;}
+}
