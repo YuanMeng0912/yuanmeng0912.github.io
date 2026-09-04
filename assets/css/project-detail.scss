@@ -57,7 +57,7 @@ figure{margin:0}
 .fig-full .plate img{width:100%;height:auto}
 .fig-hug{text-align:center}
 .fig-hug .plate{display:inline-block;max-width:100%}
-.fig-hug .plate img{width:auto;max-width:100%}
+.fig-hug .plate img{width:100%;height:auto;max-width:100%}
 .fig-hug figcaption{text-align:left}
 figcaption{font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:10px;max-width:74ch}
 figcaption b{color:var(--text);font-weight:500}
@@ -129,3 +129,25 @@ figcaption b{color:var(--text);font-weight:500}
 @media(max-width:1040px) {.toc {max-height:none;overflow:visible;}}
 }
 html[data-theme="dark"] .physical-project {--muted:#9c9c9c;--tint:rgba(38,152,186,.11);--tint-edge:rgba(38,152,186,.4);--plate-edge:rgba(255,255,255,.16);}
+
+.project-figure-viewer {
+  width:calc(100vw - 32px); max-width:1600px;
+  height:calc(100dvh - 32px); max-height:calc(100dvh - 32px);
+  margin:auto; padding:0; border:1px solid var(--global-divider-color);
+  border-radius:6px; background:var(--global-bg-color); color:var(--global-text-color);
+  &::backdrop {background:rgba(0,0,0,.75);}
+  &[open] {display:flex;flex-direction:column;}
+  .figure-viewer-toolbar {
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 16px;
+    border-bottom:1px solid var(--global-divider-color);flex-shrink:0;
+    button,a {font:inherit;font-size:14px;}
+    button {padding:6px 10px;border:1px solid var(--global-divider-color);border-radius:4px;background:var(--global-bg-color);color:var(--global-text-color);cursor:pointer;}
+    a {color:var(--global-theme-color);}
+    :focus-visible {outline:2px solid var(--global-theme-color);outline-offset:3px;}
+  }
+  .figure-viewer-label {margin-right:auto;}
+  .figure-viewer-scroll {overflow:auto;flex:1;min-height:0;background:white;padding:16px;}
+  img {display:block;width:auto;height:auto;max-width:100%;max-height:100%;margin:auto;object-fit:contain;}
+  &.original-size img {max-width:none;max-height:none;margin:0;}
+  @media(max-width:600px) {.figure-viewer-label {width:100%;}.figure-viewer-toolbar {gap:8px;}}
+}
