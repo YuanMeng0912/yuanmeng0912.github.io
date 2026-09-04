@@ -183,3 +183,7 @@ html[data-theme="dark"] .physical-project {--muted:#9c9c9c;--tint:rgba(38,152,18
   .project-main > .fig-hug .plate img {width:auto;height:auto;max-width:100%;}
   @media(max-width:760px) {.figrow {grid-template-columns:1fr!important;}}
 }
+
+.mental-project {
+  .fig-hug .plate img {width:auto;height:auto;max-width:100%;}
+}
