@@ -157,3 +157,29 @@ html[data-theme="dark"] .physical-project {--muted:#9c9c9c;--tint:rgba(38,152,18
   .figrow figure {min-width:0;}
   @media(max-width:760px) {.figrow {grid-template-columns:1fr!important;}}
 }
+
+.physical-project {
+
+.paper{display:grid;grid-template-columns:168px 1fr;gap:22px;padding:20px 0;
+  border-bottom:1px solid var(--divider);align-items:start}
+.paper:first-of-type{border-top:1px solid var(--divider)}
+.thumb{background:var(--plate);border:1px solid var(--plate-edge);border-radius:4px;
+  height:108px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:6px}
+.thumb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.paper .cite{font-size:13.5px;margin:0 0 8px}
+.paper .cite .yr{font-family:"Roboto Mono",monospace;font-size:11.5px;letter-spacing:.07em}
+.take{margin:0 0 9px;font-size:14.5px;line-height:1.6;color:var(--text);max-width:70ch}
+.role{display:inline-block;font-family:"Roboto Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--theme);border:1px solid var(--theme);
+  border-radius:3px;padding:1px 6px;margin-left:7px;vertical-align:2px}
+@media (max-width:640px){.paper{grid-template-columns:1fr}.thumb{height:150px}}
+
+.thumb .figure-link {display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
+.paper > div {min-width:0;}
+}
+
+.covid-project {
+  .figrow figure {min-width:0;}
+  .project-main > .fig-hug .plate img {width:auto;height:auto;max-width:100%;}
+  @media(max-width:760px) {.figrow {grid-template-columns:1fr!important;}}
+}

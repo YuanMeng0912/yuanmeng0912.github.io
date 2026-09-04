@@ -1,0 +1,231 @@
+<div class="physical-project covid-project"><div class="shell">
+
+  <aside class="toc" aria-label="On this page">
+    <p class="lab">On this page</p>
+    <ol>
+      <li><a href="#question">Research question</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#association">1. Establishing the association</a>
+        <ul class="sub">
+          <li><a href="#s-aag">City-specific relative risks</a></li>
+          <li><a href="#s-ijgi">Non-linear global associations</a></li>
+        </ul>
+      </li>
+      <li><a href="#outcome">2. Getting the outcome right</a>
+        <ul class="sub">
+          <li><a href="#s-ijerph">Excess all-cause mortality</a></li>
+        </ul>
+      </li>
+      <li><a href="#mechanism">3. Why exposure varied</a>
+        <ul class="sub">
+          <li><a href="#s-scirep">Urban form and NO<sub>2</sub></a></li>
+          <li><a href="#s-cities">Built environment and mobility</a></li>
+        </ul>
+      </li>
+      <li><a href="#leads">Where this leads</a></li>
+      <li><a href="#papers">Selected papers</a></li>
+    </ol>
+  </aside>
+
+  <div class="project-main">
+
+  <header class="page">
+    <p class="crumb"><a href="{{ '/projects/' | relative_url }}">Projects</a></p>
+    <h1>Place &amp; COVID-19 Mortality</h1>
+    <p class="dek">Five studies estimating how air pollution, urban form, and human mobility shaped pandemic mortality, across 231 countries, 46 cities, and 57,185 United States neighborhoods.</p>
+  </header>
+
+  <figure class="fig-hug">
+    <div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/hero_scirep-station-functions.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/hero_scirep-station-functions.jpg' | relative_url }}" style="max-height:470px" alt="Map of China marking 27 selected air quality monitoring stations, each with a circular inset showing the residential, commercial, industrial, transportation, and public land use composition within its buffer" width="1756" height="1492" loading="eager" decoding="async"></a></div>
+    <figcaption><b>Exposure has a spatial cause.</b> Twenty-seven of 145 air quality monitoring stations in China, each shown with the composition of urban function within its buffer. What surrounds a monitor determines what it measures, and how much an emission restriction can remove. From <b>Meng</b> et al., <i>Scientific Reports</i> (2021).</figcaption>
+  </figure>
+
+  <section id="question">
+    <p class="eyebrow">Research question</p>
+    <h2 class="sec">Which places lost more people, and why?</h2>
+    <div class="prose">
+      <p>Early pandemic research associated air pollution with COVID-19 outcomes using national case counts and single-city designs. Two properties of that evidence limit what it supports. Recorded COVID-19 deaths depend on testing capacity and certification practice, which differed between countries and changed through 2020, so the outcome is not comparable across the places being compared. And a single coefficient estimated over a country conceals the variation between cities, which is the scale at which policy is written and at which exposure is actually experienced.</p>
+      <p>The five studies collected here address both. Exposure and outcome are estimated at the scale at which they vary, first across 231 countries and then city by city across forty-six cities. The outcome is re-derived as excess all-cause mortality against a pre-pandemic benchmark rather than accepted as a recorded count. And the exposure itself is explained: the change in NO<sub>2</sub> under lockdown is traced to the configuration of urban function, and the collapse in urban space usage is traced to the built environment across 459 United States cities.</p>
+    </div>
+  </section>
+
+  <section id="approach">
+    <p class="eyebrow">Approach</p>
+    <h2 class="sec">Three moves across five studies</h2>
+    <div class="cols3">
+      <div class="step"><h3>Estimate at the scale of variation</h3><p>Generalized additive models capture non-linear associations at global scale. Bayesian space-time hierarchical models then estimate city-specific relative risks at lags of seven, fourteen, and twenty-one days, controlling for meteorology and mobility.</p></div>
+      <div class="step"><h3>Re-derive the outcome</h3><p>A SARIMA model fitted to 2015 through 2019 mortality supplies a weekly benchmark for what would have been expected. Excess all-cause mortality is the departure from that benchmark, and is comparable where recorded COVID-19 deaths are not.</p></div>
+      <div class="step"><h3>Explain the exposure</h3><p>SARIMAX with dynamic time warping quantifies NO<sub>2</sub> variation under emission restriction; landscape fragmentation indices describe urban configuration; geographically weighted regression relates the built environment to mobility at two spatial scales.</p></div>
+    </div>
+  </section>
+
+  <section id="association">
+    <p class="eyebrow">Theme 1</p>
+    <h2 class="sec">Establishing the association at the right scale</h2>
+    <div class="prose" style="margin-bottom:6px"><p>Both studies below estimate the air pollution and COVID-19 relationship, and both find that a single pooled coefficient misrepresents it. The first takes the city as the unit of inference, the second the country.</p></div>
+
+    <div class="study lead" id="s-aag">
+      <span class="tag">Flagship</span>
+      <p class="venue"><span class="j">Annals of the American Association of Geographers</span> &middot; 2022 &middot; first author</p>
+      <h3>City-specific relative risks in a Bayesian space-time model</h3>
+      <p class="cite"><b>Meng, Y.</b>, Wong, M. S., Kwan, M.-P., &amp; Zhu, R. (2022). Association between global air pollution and COVID-19 mortality: a study of forty-six cities in the world. <i>Annals of the American Association of Geographers</i>, 1–17.</p>
+      <div class="prose">
+        <p>Forty-six cities across six countries, between 1 April and 31 December 2020, were analyzed with a Bayesian space-time hierarchical model at lags of seven, fourteen, and twenty-one days, accounting for meteorological variability and human mobility at both global and city level. Pooled across all cities, the relative risks were 1.006 to 1.014 for NO<sub>2</sub> and 1.002 to 1.004 for PM<sub>2.5</sub>: small, positive, and consistent with the published literature.</p>
+        <p>Estimated city by city, the same data give relative risks from 0.754 to 1.245 for NO<sub>2</sub> and from 0.888 to 1.032 for PM<sub>2.5</sub>. Both positive and negative associations appear among the forty-six. The pooled figure is therefore an average taken over cities whose exposure and mortality relationships differ in sign, and reporting it alone would describe none of them. This is the argument for treating the city, rather than the country, as the unit of inference.</p>
+      </div>
+      <figure class="fig-full" style="margin:18px 0 20px">
+        <div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/aag_rr-lag-cities.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/aag_rr-lag-cities.jpg' | relative_url }}" alt="Three panels of relative risk with confidence intervals for NO2 at lags of seven, fourteen, and twenty-one days, listed city by city" width="2400" height="1436" loading="lazy" decoding="async"></a></div>
+        <figcaption><b>The result the pooled estimate hides.</b> Relative risk of NO<sub>2</sub> with 95 percent intervals at lags of seven, fourteen, and twenty-one days, estimated separately for each of the forty-six cities.</figcaption>
+      </figure>
+      <div class="figrow" style="grid-template-columns:0.907fr 1.339fr">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/aag_city-emissions.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/aag_city-emissions.jpg' | relative_url }}" alt="Two scatter panels of average NO2 and PM2.5 concentration for each of the forty-six cities" width="2007" height="2213" loading="lazy" decoding="async"></a></div>
+          <figcaption>Average NO<sub>2</sub> and PM<sub>2.5</sub> in each city, the exposure the model acts on.</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/aag_model-comparison.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/aag_model-comparison.jpg' | relative_url }}" alt="Relative risk estimates compared across generalized linear model, generalized additive model, and Bayesian space-time hierarchical model at three lags" width="2400" height="1792" loading="lazy" decoding="async"></a></div>
+          <figcaption>The same association under three model specifications, at each lag.</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.1080/24694452.2022.2029342">DOI</a><a href="{{ '/assets/pdf/projects/mengAssociationGlobalAir2022.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/mengAssociationGlobalAir2022.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+    <div class="study" id="s-ijgi">
+      <p class="venue">ISPRS International Journal of Geo-Information &middot; 2021 &middot; first author</p>
+      <h3>Non-linear associations between global air pollution and early COVID-19 incidence</h3>
+      <p class="cite"><b>Meng, Y.</b>, Wong, M. S., Xing, H., Kwan, M.-P., &amp; Zhu, R. (2021). Yearly and daily relationship assessment between air pollution and early-stage COVID-19 incidence: evidence from 231 countries and regions. <i>ISPRS International Journal of Geo-Information</i>, 10(6), 401.</p>
+      <div class="prose"><p>Tropospheric CO, NO<sub>2</sub>, O<sub>3</sub>, and SO<sub>2</sub> concentrations were assembled with daily confirmed cases between 23 January and 31 May 2020, and generalized additive models estimated non-linear associations for both the yearly discrepancy in pollution and its daily concentration. The associations proved spatially and temporally non-stationary. Yearly increases in CO, O<sub>3</sub>, and SO<sub>2</sub> accompanied rising case numbers, and NO<sub>2</sub> discrepancy produced a pronounced peak. In the daily assessment, CO and SO<sub>2</sub> were positively associated with confirmed cases while NO<sub>2</sub> was negatively associated, the opposite sign to its yearly result. A single global linear coefficient would report neither pattern.</p></div>
+      <div class="figrow" style="grid-template-columns:1.905fr 1.827fr">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/ijgi_world-r2-lm.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/ijgi_world-r2-lm.jpg' | relative_url }}" alt="World map of countries shaded by the R-squared of a linear model relating air pollution to confirmed COVID-19 cases" width="1796" height="943" loading="lazy" decoding="async"></a></div>
+          <figcaption>A linear model, fitted in every country.</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/ijgi_world-r2-gam.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/ijgi_world-r2-gam.jpg' | relative_url }}" alt="World map of the same countries shaded by the R-squared of a generalized additive model relating air pollution to confirmed COVID-19 cases" width="1794" height="982" loading="lazy" decoding="async"></a></div>
+          <figcaption>The same places allowing non-linearity: fit improves almost everywhere, by an amount that itself varies geographically.</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.3390/ijgi10060401">DOI</a><a href="{{ '/assets/pdf/projects/mengYearlyDailyRelationship2021.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/mengYearlyDailyRelationship2021.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+
+  </section>
+
+  <section id="outcome">
+    <p class="eyebrow">Theme 2</p>
+    <h2 class="sec">Getting the outcome right</h2>
+    <div class="study" id="s-ijerph">
+      <p class="venue">International Journal of Environmental Research and Public Health &middot; 2021 &middot; first author</p>
+      <h3>Excess all-cause mortality against a pre-pandemic benchmark</h3>
+      <p class="cite"><b>Meng, Y.</b>, Wong, M. S., Xing, H., Kwan, M.-P., &amp; Zhu, R. (2021). Assessing the country-level excess all-cause mortality and the impacts of air pollution and human activity during the COVID-19 epidemic. <i>International Journal of Environmental Research and Public Health</i>, 18(13), 6883.</p>
+      <div class="prose"><p>A SARIMA model fitted to 2015 through 2019 mortality produced a weekly benchmark for sixteen countries, and excess all-cause mortality was calculated as the departure from that benchmark across weeks 10 to 52 of 2020. Excess mortality ranged from −26.52 percent to 373.60 percent and exceeded recorded COVID-19 mortality in most of the sixteen. A quasi-likelihood Poisson generalized additive model then related it to ground-level NO<sub>2</sub> and PM<sub>2.5</sub> and to the frequency of park and workplace visits. A one-unit weekly increase was associated with a 1.54 percent increase in excess mortality for NO<sub>2</sub>, and decreases of 0.19, 0.23, and 0.23 percent for PM<sub>2.5</sub>, park visits, and workplace visits. Estimated instead on recorded COVID-19 deaths, the air pollution risks were higher and the mobility risks lower. The choice of outcome therefore moves the exposure estimate itself, not only its precision.</p></div>
+      <div class="figrow" style="grid-template-columns:1.717fr 1.723fr">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/ijerph_observed-benchmark.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/ijerph_observed-benchmark.jpg' | relative_url }}" alt="Sixteen panels comparing observed weekly all-cause mortality against the SARIMA benchmark for each country" width="2400" height="1398" loading="lazy" decoding="async"></a></div>
+          <figcaption>Observed weekly mortality against the benchmark, weeks 10 to 52 of 2020.</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/ijerph_excess-vs-covid.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/ijerph_excess-vs-covid.jpg' | relative_url }}" alt="Sixteen panels comparing excess all-cause mortality against recorded COVID-19 mortality for each country" width="2400" height="1393" loading="lazy" decoding="async"></a></div>
+          <figcaption>The resulting excess all-cause mortality against recorded COVID-19 mortality. The gap between the two curves is what a cause-specific count omits.</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.3390/ijerph18136883">DOI</a><a href="{{ '/assets/pdf/projects/mengAssessingCountryLevelExcess2021.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/mengAssessingCountryLevelExcess2021.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+  </section>
+
+  <section id="mechanism">
+    <p class="eyebrow">Theme 3</p>
+    <h2 class="sec">Why exposure varied from place to place</h2>
+    <div class="prose" style="margin-bottom:6px"><p>The first two themes estimate associations. The two studies below ask what produced the exposure in the first place, using the pandemic restrictions as a natural experiment on emission and on movement.</p></div>
+
+    <div class="study" id="s-scirep">
+      <p class="venue">Scientific Reports &middot; 2021 &middot; first author</p>
+      <h3>Urban functional fragmentation and NO<sub>2</sub> under emission restriction</h3>
+      <p class="cite"><b>Meng, Y.</b>, Wong, M. S., Xing, H., Zhu, R., Qin, K., Kwan, M.-P., Lee, K. H., Kwok, C. Y. T., &amp; Li, H. (2021). Effects of urban functional fragmentation on nitrogen dioxide (NO<sub>2</sub>) variation with anthropogenic-emission restriction in China. <i>Scientific Reports</i>, 11, 11908.</p>
+      <div class="prose"><p>The lockdown in China removed a large share of anthropogenic emission at once, which makes the contribution of urban form separable from the contribution of activity. NO<sub>2</sub> variation was quantified with a SARIMAX model combined with dynamic time warping, and urban functional fragmentation was described by industrial and public edge density and landscape shape index, together with the aggregation index and number of patches. Comparing the fragmentation and NO<sub>2</sub> association before and during lockdown gives negative effects of industrial edge density, public landscape shape index, aggregation index, and number of patches, and positive effects of public edge density and industrial landscape shape index. The configuration of urban function, not only how much of it there is, conditions how much NO<sub>2</sub> an emission restriction actually removes.</p></div>
+      <div class="figrow" style="grid-template-columns:1.119fr 1.038fr">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/scirep_framework.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/scirep_framework.jpg' | relative_url }}" alt="Framework diagram linking a SARIMAX dynamic time warping model of NO2 prediction to urban function metrics and four generalized additive model specifications before and during lockdown" width="2062" height="1842" loading="lazy" decoding="async"></a></div>
+          <figcaption><b>The design.</b> NO<sub>2</sub> variation is modelled first, then compared against fragmentation indices under four specifications, before and during lockdown.</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/scirep_fragmentation-coefficients.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/scirep_fragmentation-coefficients.jpg' | relative_url }}" alt="Six panels of coefficient estimates with 95 percent intervals for fragmentation indices under the four model specifications" width="2376" height="2288" loading="lazy" decoding="async"></a></div>
+          <figcaption>Coefficients and 95 percent intervals for each fragmentation index, by specification.</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.1038/s41598-021-91236-w">DOI</a><a href="{{ '/assets/pdf/projects/mengEffectsUrbanFunctional2021.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/mengEffectsUrbanFunctional2021.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+
+    <div class="study lead" id="s-cities">
+      <span class="tag">Flagship</span>
+      <p class="venue"><span class="j">Cities</span> &middot; 2024 &middot; first author</p>
+      <h3>Built environment and the collapse of urban space usage</h3>
+      <p class="cite"><b>Meng, Y.</b>, Ho, H. C., &amp; Wong, M. S. (2024). Changing associations of built environment with usage of urban space due to the COVID-19 pandemic in the United States. <i>Cities</i>, 152, 105205.</p>
+      <div class="prose">
+        <p>A total of 57,185 census block groups across 459 United States cities were analyzed, with usage of urban space measured from over two billion mobile phone records before and during the pandemic. Usage fell by between 0.25 percent and 76.35 percent depending on the city, a range wide enough that any national average describes few of them.</p>
+        <p>Geographically weighted regression related that change to road network, green space, and land use, estimated at both census block group and city level. Road length-node ratio, road intersection index, and land use densities carried the strongest block-group associations, and the coefficients moved between periods: the built environment features that predicted where people went before the pandemic are not the ones that predicted it during. Fitting at two scales shows that the association belongs to neighborhoods as well as to cities, and that a city-level model alone would attribute to the city what varies within it.</p>
+      </div>
+      <figure class="fig-full" style="margin:18px 0 20px">
+        <div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/cities2024_usage-change.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/cities2024_usage-change.jpg' | relative_url }}" alt="Map of the United States with per-city bars showing average daily urban space usage across four periods spanning 2019 and 2020" width="1903" height="1066" loading="lazy" decoding="async"></a></div>
+        <figcaption><b>What the pandemic did to movement.</b> Average daily urban space usage in each of the 459 cities across four periods spanning 2019 and 2020.</figcaption>
+      </figure>
+      <div class="figrow" style="grid-template-columns:1.149fr 0.817fr">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/cities2024_city-coefficients.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/cities2024_city-coefficients.jpg' | relative_url }}" alt="Seven small panels tracking average city-level geographically weighted regression coefficients across the four periods" width="1901" height="1655" loading="lazy" decoding="async"></a></div>
+          <figcaption>City-level coefficients across the four periods: the associations themselves change.</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/cities2024_cbg-coefficients.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/cities2024_cbg-coefficients.jpg' | relative_url }}" alt="Eight panels of census block group level geographically weighted regression coefficients plotted against the relative number of census block groups" width="1369" height="1676" loading="lazy" decoding="async"></a></div>
+          <figcaption>The same features at census block group level, showing the spread a city-level estimate averages away.</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.1016/j.cities.2024.105205">DOI</a><a href="{{ '/assets/pdf/projects/mengChangingAssociationsBuilt2024.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/mengChangingAssociationsBuilt2024.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+  </section>
+
+
+
+
+  <section id="leads">
+    <p class="eyebrow">Continuity</p>
+    <h2 class="sec">Where this leads</h2>
+    <div class="leads">
+      <p>COVID-19 was the first health outcome this research program estimated at population scale, and the design choices it forced carry into everything after it. The urban form and land use measures used here were built in the <a href="{{ '/projects/sensing-place-function/' | relative_url }}">sensing work</a>. Two lessons went forward: re-derive the outcome rather than accept the recorded count, which is why the <a href="{{ '/projects/place-cognitive-health/' | relative_url }}">cognitive health studies</a> model dementia mortality rather than diagnosis; and estimate locally rather than globally, because an exposure effect that changes sign between cities cannot be represented by one coefficient. The <a href="{{ '/projects/place-mental-health/' | relative_url }}">mental health work</a> applies the same logic to counties.</p>
+    </div>
+    
+  </section>
+
+  <section id="papers">
+    <p class="eyebrow">Summary</p>
+    <h2 class="sec">Selected papers</h2>
+
+    <div class="paper">
+      <div class="thumb"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/cities2024_usage-change.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/cities2024_usage-change.jpg' | relative_url }}" width="1903" height="1066" loading="lazy" decoding="async" alt="Open full-resolution paper figure"></a></div>
+      <div>
+        <p class="cite"><span class="yr">2024</span> &nbsp; <b>Meng, Y.</b>, Ho, H. C., &amp; Wong, M. S. Changing associations of built environment with usage of urban space due to the COVID-19 pandemic in the United States. <i>Cities</i>, 152, 105205.</p>
+        <p class="take">Urban space usage fell by between 0.25 and 76.35 percent across 459 United States cities, and the built environment features that predicted where people went before the pandemic are not the ones that predicted it during.</p>
+        <p class="links"><a href="https://doi.org/10.1016/j.cities.2024.105205">DOI</a><a href="{{ '/assets/pdf/projects/mengChangingAssociationsBuilt2024.pdf' | relative_url }}">PDF</a><a href="#s-cities">On this page</a></p>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="thumb"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/aag_rr-lag-cities.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/aag_rr-lag-cities.jpg' | relative_url }}" width="2400" height="1436" loading="lazy" decoding="async" alt="Open full-resolution paper figure"></a></div>
+      <div>
+        <p class="cite"><span class="yr">2022</span> &nbsp; <b>Meng, Y.</b>, Wong, M. S., Kwan, M.-P., &amp; Zhu, R. Association between global air pollution and COVID-19 mortality: a study of forty-six cities in the world. <i>Annals of the American Association of Geographers</i>, 1–17.</p>
+        <p class="take">Pooled across forty-six cities the relative risk of NO<sub>2</sub> is 1.006 to 1.014; estimated city by city it ranges from 0.754 to 1.245, with associations in both directions.</p>
+        <p class="links"><a href="https://doi.org/10.1080/24694452.2022.2029342">DOI</a><a href="{{ '/assets/pdf/projects/mengAssociationGlobalAir2022.pdf' | relative_url }}">PDF</a><a href="#s-aag">On this page</a></p>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="thumb"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/scirep_framework.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/scirep_framework.jpg' | relative_url }}" width="2062" height="1842" loading="lazy" decoding="async" alt="Open full-resolution paper figure"></a></div>
+      <div>
+        <p class="cite"><span class="yr">2021</span> &nbsp; <b>Meng, Y.</b>, Wong, M. S., Xing, H., Zhu, R., Qin, K., Kwan, M.-P., Lee, K. H., Kwok, C. Y. T., &amp; Li, H. Effects of urban functional fragmentation on nitrogen dioxide (NO<sub>2</sub>) variation with anthropogenic-emission restriction in China. <i>Scientific Reports</i>, 11, 11908.</p>
+        <p class="take">Lockdown separates urban form from activity: the configuration of urban function, not its quantity, conditions how much NO<sub>2</sub> an emission restriction actually removes.</p>
+        <p class="links"><a href="https://doi.org/10.1038/s41598-021-91236-w">DOI</a><a href="{{ '/assets/pdf/projects/mengEffectsUrbanFunctional2021.pdf' | relative_url }}">PDF</a><a href="#s-scirep">On this page</a></p>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="thumb"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/ijerph_excess-vs-covid.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/ijerph_excess-vs-covid.jpg' | relative_url }}" width="2400" height="1393" loading="lazy" decoding="async" alt="Open full-resolution paper figure"></a></div>
+      <div>
+        <p class="cite"><span class="yr">2021</span> &nbsp; <b>Meng, Y.</b>, Wong, M. S., Xing, H., Kwan, M.-P., &amp; Zhu, R. Assessing the country-level excess all-cause mortality and the impacts of air pollution and human activity during the COVID-19 epidemic. <i>International Journal of Environmental Research and Public Health</i>, 18(13), 6883.</p>
+        <p class="take">Excess all-cause mortality ranged from −26.52 to 373.60 percent and exceeded recorded COVID-19 deaths in most of sixteen countries, and the choice of outcome moves the exposure estimate itself.</p>
+        <p class="links"><a href="https://doi.org/10.3390/ijerph18136883">DOI</a><a href="{{ '/assets/pdf/projects/mengAssessingCountryLevelExcess2021.pdf' | relative_url }}">PDF</a><a href="#s-ijerph">On this page</a></p>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="thumb"><a class="figure-link" href="{{ '/assets/img/projects/place-covid-19-mortality/ijgi_world-r2-gam.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/projects/place-covid-19-mortality/ijgi_world-r2-gam.jpg' | relative_url }}" width="1794" height="982" loading="lazy" decoding="async" alt="Open full-resolution paper figure"></a></div>
+      <div>
+        <p class="cite"><span class="yr">2021</span> &nbsp; <b>Meng, Y.</b>, Wong, M. S., Xing, H., Kwan, M.-P., &amp; Zhu, R. Yearly and daily relationship assessment between air pollution and early-stage COVID-19 incidence: evidence from 231 countries and regions. <i>ISPRS International Journal of Geo-Information</i>, 10(6), 401.</p>
+        <p class="take">Air pollution and case associations are non-stationary in space and time, and daily NO<sub>2</sub> carries the opposite sign to its yearly discrepancy.</p>
+        <p class="links"><a href="https://doi.org/10.3390/ijgi10060401">DOI</a><a href="{{ '/assets/pdf/projects/mengYearlyDailyRelationship2021.pdf' | relative_url }}">PDF</a><a href="#s-ijgi">On this page</a></p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  </div>
+</div>
+
+</div>
