@@ -32,6 +32,8 @@ module Jekyll
       cache_key = "#{scholar_id}:#{article_id}"
       fallback_count = context.registers[:site].data.dig("scholar_citations", "citations", article_id)
 
+      return format_count(fallback_count) unless fallback_count.nil?
+
       begin
         fetch_profile(scholar_id) unless GoogleScholarCitationsTag::LoadedProfiles[scholar_id]
         citation_count = GoogleScholarCitationsTag::Citations.fetch(cache_key) do
@@ -81,6 +83,8 @@ module Jekyll
     end
 
     def format_count(citation_count)
+      return citation_count.to_s if citation_count.to_i < 1000
+
       Helpers.number_to_human(
         citation_count,
         format: "%n%u",
