@@ -70,3 +70,15 @@ Reference-comparison limitation: browser security policy rejected opening the lo
 
 final result: blocked
 Blocker: reference screenshot comparison unavailable. Local implementation and interaction checks are complete; no claim of fully verified visual fidelity.
+
+## Project 2 — 2026-09-03
+
+Source: Website design/02_sensing-place-function/Mockup.html. Implementation: http://localhost:8080/projects/sensing-place-function/.
+Evidence: /tmp/project2-desktop.png (1440 × 1000), /tmp/project2-mobile.png (390 × 844). Light theme, desktop and mobile CSS viewports matched to screenshot sizes.
+
+All six study anchors and active-section indicators work. All 16 original images loaded in the browser; file hashes match the supplied JPEGs. The full-resolution viewer displays the tested 2400 px figure at 2400 px when Original size is selected. All six PDF and BibTeX targets exist. DOI values match repository references; external resolver navigation not tested. Four corresponding-author names are bold with asterisks. Text comparison confirms no changes to supplied prose or captions. Browser console has no errors; no horizontal overflow at 390 px. Inline paired-image ratios preserved on desktop and overridden to one column on mobile. Scoped additions leave Project 1 styling unchanged. Roboto / Roboto Slab, spacing, teal accents, original assets and exact copy checked against reference HTML/CSS. Paired source screenshots remain unavailable because local reference file navigation was previously rejected by browser security policy; no workaround attempted.
+
+Content concern left unchanged for the user: Ecological Indicators describes six landscape element types, whereas the draft lists four. Headline numeric results match the paper abstracts/tables.
+
+final result: blocked
+Blocker: full source-versus-implementation screenshot comparison unavailable. Implementation and functional verification completed, but exact visual fidelity is not claimed.
