@@ -1,0 +1,185 @@
+<div class="physical-project"><div class="shell">
+
+  <aside class="toc" aria-label="On this page">
+    <p class="lab">On this page</p>
+    <ol>
+      <li><a href="#question">Research question</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#validation" >1. Validating global products</a>
+        <ul class="sub">
+          <li><a href="#s-isprs">Geotagged photographs and deep learning</a></li>
+          <li><a href="#s-ijrs">Points of interest and decision trees</a></li>
+        </ul>
+      </li>
+      <li><a href="#classification">2. Classifying land cover directly</a>
+        <ul class="sub"><li><a href="#s-rs">Spatial clustering and topic models</a></li></ul>
+      </li>
+      <li><a href="#change">3. Detecting change between releases</a>
+        <ul class="sub">
+          <li><a href="#s-sus">Change detection from point data</a></li>
+        </ul>
+      </li>
+      <li><a href="#drivers">4. Explaining land use transformation</a>
+        <ul class="sub"><li><a href="#s-gsis">Multi-spatial Bayesian modeling</a></li></ul>
+      </li>
+      <li><a href="#leads">Where this leads</a></li>
+    </ol>
+  </aside>
+
+  <div class="project-main">
+
+  <header class="page">
+    <p class="crumb"><a href="{{ "/projects/" | relative_url }}">Projects</a></p>
+    <h1>Sensing Place: Mapping the Physical Environment</h1>
+    <p class="dek">Methods for measuring land cover from volunteered geographic information, and for validating, updating, and explaining the global products on which environmental exposure research depends.</p>
+  </header>
+
+  <div class="figrow">
+    <figure class="fig-full">
+      <div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/isprs_study-area-photos.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/isprs_study-area-photos.jpg" | relative_url }}" loading="eager" decoding="async" alt="Land cover map of western California with the locations of geotagged photographs shown as dense black points" width="1483" height="1307"></a></div>
+      <figcaption><b>The raw material.</b> 22,022 geotagged photographs over the land cover map under assessment, western California.</figcaption>
+    </figure>
+    <figure class="fig-full">
+      <div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/isprs_validation-samples-california.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/isprs_validation-samples-california.jpg" | relative_url }}" loading="eager" decoding="async" alt="The same land cover map with selected validation samples shown as pins classified as artificial surfaces, vegetation, or water bodies" width="1482" height="1307"></a></div>
+      <figcaption><b>The reference set.</b> Samples selected from those photographs, each assigned a land cover class by a convolutional neural network rather than by a human interpreter.</figcaption>
+    </figure>
+  </div>
+  <p class="herocap">Both panels from Xing, <b>Meng</b> et al., <i>ISPRS Journal of Photogrammetry and Remote Sensing</i> (2018).</p>
+
+  <section id="question">
+    <p class="eyebrow">Research question</p>
+    <h2 class="sec">Can volunteered data carry the exposure layer?</h2>
+    <div class="prose">
+      <p>Global land cover products such as GlobeLand30 underpin the assignment of environmental exposures in population health research. Three properties limit that use. Releases are separated by several years, so the map need not correspond to the period over which exposure accrues. Validation depends on expert photo-interpretation, which constrains the number of reference samples that can realistically be collected. And thematic classes are defined for global consistency rather than for the distinctions that matter within a city.</p>
+      <p>Volunteered geographic information offers a possible remedy. Geotagged photographs and points of interest are generated continuously, are spatially dense in populated areas, and carry semantic labels. The five studies collected here establish what such data can and cannot do: validate an existing product, classify land cover independently of imagery, detect change between official releases, and support statistical explanation of land use transformation.</p>
+    </div>
+  </section>
+
+  <section id="approach">
+    <p class="eyebrow">Approach</p>
+    <h2 class="sec">Three moves across five studies</h2>
+    <div class="cols3">
+      <div class="step"><h3>Collect</h3><p>Photographs from Flickr and points of interest from online map services and social media platforms: data already in existence, refreshed continuously, at no acquisition cost.</p></div>
+      <div class="step"><h3>Interpret</h3><p>Convolutional neural networks assign a land cover class to a photograph. Density-based clustering and topic models aggregate scattered points into coherent regions, and hull fitting supplies their boundaries.</p></div>
+      <div class="step"><h3>Assess and explain</h3><p>Results are tested against the official product cell by cell, changes are detected as class transitions, and hierarchical models attribute transformation to its spatial scale.</p></div>
+    </div>
+  </section>
+
+  <section id="validation">
+    <p class="eyebrow">Theme 1</p>
+    <h2 class="sec">Validating global land cover products</h2>
+    <div class="prose" style="margin-bottom:6px"><p>Accuracy assessment is the bottleneck in global land cover mapping: reference samples must be interpreted individually, and the cost of doing so limits how many can be collected. Both studies below replace part of that interpretation with an automated classifier applied to volunteered data.</p></div>
+
+    <div class="study lead" id="s-isprs">
+      <span class="tag">Flagship</span>
+      <p class="venue"><span class="j">ISPRS Journal of Photogrammetry and Remote Sensing</span> &middot; 2018 &middot; corresponding author</p>
+      <h3>Geotagged photographs as reference samples, classified by deep learning</h3>
+      <p class="cite">Xing, H., <b>Meng, Y.</b> (corresponding author), Wang, Z., Fan, K., &amp; Hou, D. (2018). Exploring geo-tagged photos for land cover validation with deep learning. <i>ISPRS Journal of Photogrammetry and Remote Sensing</i>, 141, 237–251.</p>
+      <div class="prose">
+        <p>A VGG-16 network was trained on 10,345 globally distributed photographs and applied to 22,022 photographs within the study area, yielding land cover class probabilities for each. A sample selection procedure then combined those probabilities with an inverse-distance weighting of the photograph's proximity to the candidate sample, so that confident and well-located photographs contribute more to the reference set.</p>
+        <p>The contribution is a validation workflow in which sample interpretation is automated end to end while retaining an explicit account of sample reliability. The approach makes accuracy assessment tractable at scales where expert interpretation is not.</p>
+      </div>
+      <figure class="fig-full" style="margin:18px 0 6px">
+        <div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/isprs_cnn-model-framework.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/isprs_cnn-model-framework.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Diagram of the CNN classification model: labelled training photographs feed convolutional and pooling layers, fully connected layers, and a softmax classifier that returns land cover class probabilities, which are then applied to study-area photographs" width="1900" height="1084"></a></div>
+        <figcaption><b>The classification model.</b> Photographs labelled by land cover class train a VGG-16 network through convolutional, pooling, and fully connected layers; a softmax classifier returns a probability for each class. The trained model is then applied to the photographs inside the study area, and those probabilities become the evidence from which reference samples are selected.</figcaption>
+      </figure>
+      <div class="figrow">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/isprs_workflow.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/isprs_workflow.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Methodology workflow diagram linking photograph classification, clustering, sample allocation, and accuracy assessment" width="976" height="1122"></a></div>
+          <figcaption>Where the model sits in the wider validation workflow: classification, filtering, sample allocation, and accuracy assessment.</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/isprs_photo-classes.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/isprs_photo-classes.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Grid of twelve photographs grouped into artificial surfaces, vegetation, and water bodies" width="1800" height="1109"></a></div>
+          <figcaption>What the network reads: photographs grouped by the class it assigned, (a) artificial surfaces, (b) vegetation, (c) water bodies.</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.1016/j.isprsjprs.2018.04.025">DOI</a><a href="{{ '/assets/pdf/projects/xingExploringGeotaggedPhotos2018.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/xingExploringGeotaggedPhotos2018.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+
+    <div class="study" id="s-ijrs">
+      <p class="venue">International Journal of Remote Sensing &middot; 2017 &middot; co-first author</p>
+      <h3>Points of interest as evidence of artificial surfaces</h3>
+      <p class="cite">Xing, H., <b>Meng, Y.</b> (co-first author), Hou, D., Cao, F., &amp; Xu, H. (2017). Exploring point-of-interest data from social media for artificial surface validation with decision trees. <i>International Journal of Remote Sensing</i>, 38(23), 6945–6969.</p>
+      <div class="prose"><p>Decision trees classified points of interest as artificial or non-artificial surface using distance to the nearest village and to the nearest road as predictors. Compared cell by cell against GlobeLand30 across 66,058 samples in Beijing, the two agreed for 91.4 percent of them. The residual disagreement was concentrated in parcels below the product's minimum mapping unit, indicating a systematic rather than random source of error.</p></div>
+      <div class="figrow">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/ijrs_poi-classification.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/ijrs_poi-classification.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Map of Beijing with points of interest symbolized as artificial-surface and non-artificial-surface over a land cover base" width="1305" height="1593"></a></div>
+          <figcaption>Points of interest after decision-tree classification, Beijing.</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/ijrs_beijing-reclassified.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/ijrs_beijing-reclassified.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Map of Beijing showing artificial surfaces in green against non-artificial land in beige after reclassification" width="1305" height="1610"></a></div>
+          <figcaption>GlobeLand30 for Beijing after reclassification on that evidence.</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.1080/01431161.2017.1368101">DOI</a><a href="{{ '/assets/pdf/projects/xingExploringPointofinterestData2017.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/xingExploringPointofinterestData2017.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+  </section>
+
+  <section id="classification">
+    <p class="eyebrow">Theme 2</p>
+    <h2 class="sec">Classifying land cover directly from volunteered data</h2>
+    <div class="study" id="s-rs">
+      <p class="venue">Remote Sensing &middot; 2017 &middot; corresponding author</p>
+      <h3>From point clusters to land cover regions, without imagery</h3>
+      <p class="cite">Xing, H., <b>Meng, Y.</b> (corresponding author), Hou, D., Song, J., &amp; Xu, H. (2017). Employing crowdsourced geographic information to classify land cover with spatial clustering and topic model. <i>Remote Sensing</i>, 9(6), 602.</p>
+      <div class="prose"><p>Density-based clustering grouped points of interest into candidate regions, an adaptive concave hull delineated each region's boundary, and a topic model inferred its land cover class from the mix of point categories it contained. Applied across urban and forested parts of Shandong Province, the procedure produced a land cover classification with no satellite imagery in the processing chain, establishing volunteered data as an independent source rather than only a validation aid.</p></div>
+      <div class="figrow">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/remotesensing_shandong-urban.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/remotesensing_shandong-urban.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Satellite image of Binzhou with extracted artificial-surface regions overlaid in red" width="1484" height="1079"></a></div>
+          <figcaption>Artificial-surface regions extracted in an urban setting (Binzhou).</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/remotesensing_shandong-forest.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/remotesensing_shandong-forest.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Satellite image of a forested upland area near Weifang with extracted non-artificial-surface regions overlaid in green" width="1494" height="1094"></a></div>
+          <figcaption>Non-artificial-surface regions in a forested setting (Weifang).</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.3390/rs9060602">DOI</a><a href="{{ '/assets/pdf/projects/xingEmployingCrowdsourcedGeographic2017.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/xingEmployingCrowdsourcedGeographic2017.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+  </section>
+
+  <section id="change">
+    <p class="eyebrow">Theme 3</p>
+    <h2 class="sec">Detecting change between releases</h2>
+    <div class="study" id="s-sus">
+      <p class="venue">Sustainability &middot; 2017 &middot; first author</p>
+      <h3>Recovering land cover change in the interval between products</h3>
+      <p class="cite"><b>Meng, Y.</b>, Hou, D., &amp; Xing, H. (2017). Rapid detection of land cover changes using crowdsourced geographic information: a case study of Beijing, China. <i>Sustainability</i>, 9(9), 1547.</p>
+      <div class="prose"><p>Land cover regions were derived from point-of-interest data for 2016 and compared with GlobeLand30 for 2010, yielding four unchanged and six changed class transitions across Beijing. Classification of the derived regions reached 89.2 percent overall accuracy on 250 validation samples. Conversion of cultivated land and of forest and grassland to artificial surfaces accounted for the majority of detected change.</p></div>
+      <div class="figrow">
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/sustainability_beijing-change-2010-2016.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/sustainability_beijing-change-2010-2016.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Map of Beijing showing land cover transitions between 2010 and 2016 over a satellite base" width="1465" height="1241"></a></div>
+          <figcaption>Transitions across the municipality, 2010 to 2016, recovered without a new image classification.</figcaption></figure>
+        <figure class="fig-full"><div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/sustainability_beijing-detail-imagery.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/sustainability_beijing-detail-imagery.jpg" | relative_url }}" loading="lazy" decoding="async" alt="High-resolution satellite imagery of a peri-urban district with detected artificial surfaces overlaid in yellow" width="790" height="924"></a></div>
+          <figcaption>A peri-urban subset against imagery: detected artificial surfaces in yellow.</figcaption></figure>
+      </div>
+      <p class="links"><a href="https://doi.org/10.3390/su9091547">DOI</a><a href="{{ '/assets/pdf/projects/mengRapidDetectionLand2017.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/mengRapidDetectionLand2017.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+
+    </section>
+
+  <section id="drivers">
+    <p class="eyebrow">Theme 4</p>
+    <h2 class="sec">Explaining land use transformation</h2>
+    <div class="study lead" id="s-gsis">
+      <span class="tag">Flagship</span>
+      <p class="venue"><span class="j">Geo-spatial Information Science</span> &middot; 2023 &middot; first author</p>
+      <h3>Attributing megacity urbanization to its spatial scale</h3>
+      <p class="cite"><b>Meng, Y.</b>, Wong, M. S., Kwan, M.-P., Pearce, J., &amp; Feng, Z. (2023). Assessing multi-spatial driving factors of urban land use transformation in megacities: a case study of Guangdong–Hong Kong–Macao Greater Bay Area from 2000 to 2018. <i>Geo-spatial Information Science</i>, 1–17.</p>
+      <div class="prose">
+        <p>Newly formed urban built-up land between 2000 and 2018 was extracted for the Greater Bay Area and classified into dominant industrial, public, and residential use on a one-kilometer grid. Candidate drivers were assembled at three spatial levels: region-level socioeconomics, cluster-level ecological morphology, and grid-level urban function. A three-level Bayesian hierarchical model estimated their effects jointly.</p>
+        <p>Effects proved to be scale-specific and city-specific. Road density and public transportation density were among the strongest grid-level associations with dominant industrial land, while the same characteristics behaved differently in Hong Kong, where urban development had already stabilized. Separating the levels prevents the attribution errors that arise when drivers measured at one scale are used to explain outcomes at another.</p>
+      </div>
+      <figure class="fig-full" style="margin:18px 0 22px">
+        <div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/gsis_multi-spatial-framework.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/gsis_multi-spatial-framework.jpg" | relative_url }}" loading="lazy" decoding="async" alt="Diagram of the multi-spatial urbanization framework showing region-level socioeconomics, cluster-level ecological morphologies, and grid-level urban functional morphologies feeding a three-level Bayesian hierarchical model" width="1780" height="771"></a></div>
+        <figcaption>The multi-spatial framework and the three-level model it feeds.</figcaption>
+      </figure>
+      <figure class="fig-hug">
+        <div class="plate"><a class="figure-link" href="{{ "/assets/img/projects/sensing-place-physical/gsis_city-level-effects.jpg" | relative_url }}" target="_blank" rel="noopener"><img src="{{ "/assets/img/projects/sensing-place-physical/gsis_city-level-effects.jpg" | relative_url }}" loading="lazy" decoding="async" style="max-height:400px" alt="Coefficient plot with 95 percent intervals showing fixed effects of grid-level urban functional characteristics on dominant land uses across cities in the Greater Bay Area" width="1800" height="1286"></a></div>
+        <figcaption>Fixed effects of grid-level functional characteristics, by city and dominant land use.</figcaption>
+      </figure>
+      <p class="links"><a href="https://doi.org/10.1080/10095020.2023.2255033">DOI</a><a href="{{ '/assets/pdf/projects/mengAssessingMultispatialDriving2023.pdf' | relative_url }}">PDF</a><a href="{{ '/assets/bib/mengAssessingMultispatialDriving2023.bib' | relative_url }}" download>Cite (BibTeX)</a></p>
+    </div>
+  </section>
+
+  <section id="leads">
+    <p class="eyebrow">Continuity</p>
+    <h2 class="sec">Where this leads</h2>
+    <div class="leads">
+      <p>The land cover and land use layers developed here become exposure variables elsewhere in this research program. Urban form measures constructed in these studies are applied in the analysis of <a href="{{ "/projects/place-covid-19-mortality/" | relative_url }}">urban form, air pollution, and COVID-19 mortality</a>; the same processing chain, applied to food outlets and air pollution surfaces, supplies the exposures used in the <a href="{{ "/projects/place-cognitive-health/" | relative_url }}">cognitive health studies</a>. Mapping the physical environment is the instrument, not the object: it is what makes population-scale environmental health questions answerable.</p>
+    </div>
+
+  </section>
+
+
+
+  </div>
+</div>
+
+</div>

@@ -7,8 +7,10 @@ nav: true
 nav_order: 3
 dropdown: true
 children:
-  - title: Sensing Place
-    permalink: /projects/sensing-place/
+  - title: Sensing Place — Mapping the Physical Environment
+    permalink: /projects/sensing-place-physical/
+  - title: Sensing Place — Measuring Urban Function & Deprivation
+    permalink: /projects/sensing-place-function/
   - title: Place & COVID-19 Mortality
     permalink: /projects/place-covid-19-mortality/
   - title: Place & Mental Health

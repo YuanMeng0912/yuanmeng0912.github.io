@@ -1,0 +1,131 @@
+---
+---
+.project-detail-container {max-width:1240px!important; padding:0!important; margin-top:0!important;}
+.physical-project {
+--bg:var(--global-bg-color);--text:var(--global-text-color);--heading:var(--global-text-color);--muted:#7d7d7d;--theme:var(--global-theme-color);--divider:var(--global-divider-color);--plate:#fff;--plate-edge:rgba(0,0,0,.12);--tint:rgba(59,151,151,.06);--tint-edge:rgba(59,151,151,.28);
+*{box-sizing:border-box}
+&{margin:0;background:var(--bg);color:var(--text);
+  font-family:Roboto,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-weight:400;font-size:16px;line-height:1.68;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Roboto Slab",Georgia,serif;color:var(--heading);text-wrap:balance}
+a{color:var(--theme);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--theme);outline-offset:3px;border-radius:2px}
+img{max-width:100%;display:block}
+p{margin:0 0 15px}
+
+.wrap{max-width:930px;margin:0 auto;padding:0 24px}
+.shell{max-width:1240px;margin:0 auto;padding:0 24px;display:grid;
+  grid-template-columns:198px minmax(0,1fr);gap:44px;align-items:start}
+
+/* sidebar toc */
+.toc{position:sticky;top:80px;padding-top:60px;font-size:13.5px;line-height:1.5}
+.toc .lab{font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 12px;padding-bottom:9px;
+  border-bottom:1px solid var(--divider)}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc > ol > li{margin-bottom:11px}
+.toc a{color:var(--text);display:block;padding:2px 0 2px 11px;border-left:2px solid transparent}
+.toc a:hover{color:var(--theme);text-decoration:none}
+.toc a.on{color:var(--theme);border-left-color:var(--theme);font-weight:500}
+.toc .sub{list-style:none;margin:5px 0 0;padding:0}
+.toc .sub a{font-size:12.5px;color:var(--muted);padding-left:22px;line-height:1.4;padding-top:3px;padding-bottom:3px}
+.toc .sub a:hover{color:var(--theme)}
+
+.project-main{min-width:0;padding-bottom:20px}
+
+/* page head */
+header.page{padding:56px 0 30px}
+.crumb{font-family:"Roboto Mono",monospace;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--theme);margin:0 0 15px}
+header.page h1{font-size:38px;line-height:1.16;margin:0 0 15px;font-weight:700;letter-spacing:-.012em}
+.dek{font-size:18.5px;line-height:1.56;color:var(--muted);max-width:62ch;margin:0;font-weight:300}
+
+/* sections */
+section{padding:30px 0 6px;scroll-margin-top:100px}
+.eyebrow{font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--theme);margin:0 0 7px}
+h2.sec{font-size:24px;margin:0 0 16px;font-weight:500;letter-spacing:-.005em;
+  padding-bottom:11px;border-bottom:1px solid var(--divider)}
+.prose{max-width:66ch}
+.prose p:last-child{margin-bottom:0}
+
+/* figures */
+figure{margin:0}
+.plate{background:var(--plate);border:1px solid var(--plate-edge);border-radius:5px;padding:11px}
+.fig-full .plate{display:block}
+.fig-full .plate img{width:100%;height:auto}
+.fig-hug{text-align:center}
+.fig-hug .plate{display:inline-block;max-width:100%}
+.fig-hug .plate img{width:auto;max-width:100%}
+.fig-hug figcaption{text-align:left}
+figcaption{font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:10px;max-width:74ch}
+figcaption b{color:var(--text);font-weight:500}
+.herocap{font-size:13px;color:var(--muted);margin:14px 0 0;text-align:right}
+.herocap b{color:var(--text);font-weight:700}
+
+/* approach */
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:4px}
+.step{border-top:2px solid var(--theme);padding-top:12px}
+.step h3{font-size:16px;margin:0 0 6px;font-weight:500}
+.step p{margin:0;font-size:14.5px;line-height:1.6}
+
+/* study entry */
+.study{padding:26px 0 30px;border-bottom:1px solid var(--divider)}
+.study:last-child{border-bottom:0}
+.venue{font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.venue .j{color:var(--theme);font-weight:500}
+.study h3{font-size:19px;margin:0 0 10px;font-weight:500;line-height:1.35}
+.cite{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0 0 14px;max-width:74ch}
+.cite b{color:var(--text);font-weight:700}
+.cite i{font-style:italic}
+.study .prose{margin-bottom:16px}
+.links{font-family:"Roboto Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--muted);margin:0}
+.links a{margin-right:15px}
+
+/* featured study */
+.study.lead{font-size:16px;font-weight:400;line-height:1.68;background:var(--tint);border:1px solid var(--tint-edge);border-radius:6px;
+  padding:26px 28px 28px;margin:6px 0 10px}
+.study.lead h3{font-size:22px}
+.tag{display:inline-block;font-family:"Roboto Mono",monospace;font-size:10px;
+  letter-spacing:.13em;text-transform:uppercase;color:#fff;background:var(--theme);
+  border-radius:3px;padding:3px 8px;margin-bottom:11px}
+.figrow{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;margin:18px 0 4px}
+.figrow .plate{display:block}
+.figrow .plate img{width:100%;height:auto}
+.figone{margin:18px 0 4px}
+
+
+/* leads */
+.leads{background:var(--tint);border-left:3px solid var(--theme);
+  padding:22px 26px;border-radius:0 5px 5px 0;margin-top:8px}
+.leads p{margin:0;max-width:68ch}
+
+
+
+@media (max-width:1040px){
+  .shell{grid-template-columns:1fr;gap:0;max-width:978px}
+  .toc{position:static;padding-top:34px;border-bottom:1px solid var(--divider);padding-bottom:18px}
+  .toc > ol{columns:2;column-gap:30px}
+}
+@media (max-width:760px){
+  .cols3{grid-template-columns:1fr;gap:20px}
+  .figrow{grid-template-columns:1fr}
+  .toc > ol{columns:1}
+  header.page h1{font-size:30px}
+  .study.lead{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+
+.study[id] {scroll-margin-top:100px;}
+.figrow {margin-bottom:18px;}
+.links {margin-top:18px;}
+.figure-link {display:block;}
+.fig-hug img {object-fit:contain;}
+.toc .sub a.on {color:var(--theme);}
+.toc {max-height:calc(100vh - 90px); overflow-y:auto;}
+@media(max-width:1040px) {.toc {max-height:none;overflow:visible;}}
+}
+html[data-theme="dark"] .physical-project {--muted:#9c9c9c;--tint:rgba(38,152,186,.11);--tint-edge:rgba(38,152,186,.4);--plate-edge:rgba(255,255,255,.16);}
